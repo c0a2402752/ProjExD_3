@@ -166,8 +166,6 @@ class Score :
         self.img = self.fonto.render(f"スコア: {self.value}", 0, self.color)
         screen.blit(self.img, self.rct)
 
-                  
-
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
@@ -192,6 +190,7 @@ def main():
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 # スペースキー押下でBeamクラスのインスタンス生成
                 beam = Beam(bird)            
+        
         screen.blit(bg_img, [0, 0])
         
         for bomb in bombs:
@@ -215,7 +214,6 @@ def main():
                     bird.change_img(6, screen)
                     score.add(1)
  
-
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen)
         if beam is not None:
